@@ -12,14 +12,15 @@ export default function Comment({comments, onDelete}){
         <>
 
 
-            <ModalDelete ref={openModalDelete} button = "NO CANCEL" onDeletes = { onDelete}  >
-                <h2>Delete comment</h2>
-                <p>Are you sure you want to delete this comment? This will remove the comment and cant be undone</p>
-            </ModalDelete>   
+
             <ul>     
                 {comments.map((replycomment) => (
                     <div className='border-0 border-slate-950 w-[73%] p-4 mb-4 bg-slate-100 rounded-xl ml-10'>
-
+                            <ModalDelete ref={openModalDelete} button = "NO CANCEL" onDeletes = {() => onDelete(replycomment.id)}  >
+                                <h2>Delete comment</h2>
+                                <p>Are you sure you want to delete this comment? This will remove the comment and cant be undone</p>
+                            </ModalDelete>  
+                            
                         <li key={replycomment.id}>
                             <div  className='flex gap-4 mb-2'>
                                 <img src={DATA[3].img} alt= 'icon' className='w-9 object-contain' />

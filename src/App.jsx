@@ -99,7 +99,7 @@ function App() {
 
  //const commentReply = replyComment.reply.find(reply => reply.reply === replyComment.selectedReply )
 
-  let comment  =  <Comment comments = {replyComment.reply} onDelete={handleDeleteReply}/>
+  let comment  =  <Comment comments = {replyComment.reply} onDelete={handleDeleteReply} />
   if(replyComment.selectedReply === null){
     comment = <Input onClickReply = {handleADdComment} />
     

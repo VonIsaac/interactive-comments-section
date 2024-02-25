@@ -4,12 +4,13 @@ import { createPortal } from "react-dom"
 const ModalDelete = forwardRef( function ModalDelete({children, button, onDeletes}, ref){
     const modalDelete = useRef()
 
+
     useImperativeHandle(ref,() => {
-         return{
+        return{
             open(){
                 modalDelete.current.showModal()
-            } 
-         }
+            }
+        }
     })
 
     
