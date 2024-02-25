@@ -3,10 +3,10 @@ import Amyrobson from './Components/Amyrobson.jsx'
 import Maxblagun from './Components/Maxblagun.jsx';
 import Ramsesmiron from './Components/Ramsesmiron.jsx';
 import Juliusomo from './Components/Juliusomo.jsx';
-import Input from './Components/Input.jsx';
-import Comment from './Components/Comment.jsx';
-import InputBox from './Components/InputBox.jsx';
-import CommentBox from './Components/CommentBox.jsx';
+import Input from './Components/Inputs/Input.jsx';
+import Comment from './Components/Comments/Comment.jsx';
+import InputBox from './Components/Inputs/InputBox.jsx';
+import CommentBox from './Components/Comments/CommentBox.jsx';
 import { useState } from 'react';
 
 function App() {
@@ -129,7 +129,7 @@ function App() {
        <div className=' border-0 border-slate-950 w-[50%] h-[85%] p-5'>
           <Amyrobson onclick = {handleClickReply}/>
             {comment}
-          <Maxblagun onclicks = {handleClickReplys} /> 
+          <Maxblagun  /> 
           <Ramsesmiron />
           {deleteComments}
           {comments}

@@ -1,6 +1,6 @@
-import DATA from '../data.js'
+import DATA from '../../data.js'
 import { useRef } from 'react'
-import Modal from './Modal.jsx';
+import Modal from '../Modals/Modal.jsx';
 export default function Input({onClickReply}){
      const inputComment =  useRef();
      const modalOpen = useRef()

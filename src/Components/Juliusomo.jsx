@@ -1,5 +1,5 @@
 import DATA from '../data.js'
-import ModalDelete from './ModalDelete.jsx'
+import ModalDelete from './Modals/ModalDelete.jsx'
 import { useRef } from 'react'
 export default function  Juliusomo({onDeleteComment}){
 
@@ -22,7 +22,7 @@ export default function  Juliusomo({onDeleteComment}){
                     <img src={DATA[3].img} alt="juliusomo" className=' w-9 object-contain' />
                     <h2 className=' font-bold'>juliusomo</h2>
                     <p className=' text-slate-500'>2 days ago</p>
-                    <button onClick={openModal} className=' ml-auto font-bold mb-3 cursor-pointer hover:text-sky-500'>Delete</button>
+                    <button onClick={openModal} className=' ml-auto font-bold mb-3 cursor-pointer hover:text-rose-700 '>Delete</button>
                 </div>
                 <p className=' font-sans text-slate-600 font-medium'>
                     <b className=' text-blue-600 cursor-pointer'>{DATA[3].names}</b> I couldn't agree more with this.

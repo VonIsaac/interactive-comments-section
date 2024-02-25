@@ -1,5 +1,5 @@
-import DATA from '../data.js';
-import ModalDelete from './ModalDelete.jsx';
+import DATA from '../../data.js';
+import ModalDelete from '../Modals/ModalDelete.jsx';
 import { useRef } from 'react';
 export default function CommentBox({comments, onDeletes}){
 
