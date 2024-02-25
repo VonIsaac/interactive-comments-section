@@ -51,8 +51,6 @@ function App() {
     })
 };
 
-
-
   function handleClickReply(){
     setReplyComment((prevComment) => {
       return{
@@ -105,11 +103,11 @@ function App() {
     
   }
 
- 
-  let comments = <CommentBox comments = {replyComment.replys} onDeletes={deleteReplys}/>
-  if(replyComment.selectedReplys === true){
-    comments =   <InputBox onReply={addComments}/>
-  }
+    let comments; 
+    if(replyComment.replys){
+        comments = <CommentBox comments = {replyComment.replys} onDeletes={deleteReplys}/>
+    }
+  
    
   return (
     <>
@@ -121,6 +119,7 @@ function App() {
           <Ramsesmiron />
           <Juliusomo />
           {comments}
+          <InputBox onReply={addComments}/>
        </div>
       </main>
     </>

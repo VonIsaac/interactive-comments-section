@@ -13,7 +13,7 @@ const Modal = forwardRef( function Modal({children, button}, ref){
      
     return createPortal(
         
-            <dialog ref={modal} className=" backdrop:bg-stone-900/90 p-4 rounded-md shadow-md">
+            <dialog ref={modal} className=" backdrop:bg-stone-900/90 p-4 rounded-md shadow-md w-[23%]">
                 {children}
                 <form method="dialog">
                     <button className=" px-4 py-2 text-xs md:text-base rounded-md bg-stone-800 text-stone-400 hover:bg-stone-600 hover:text-stone-100 ">{button}</button>
