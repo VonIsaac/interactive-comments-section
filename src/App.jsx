@@ -14,7 +14,8 @@ function App() {
     selectedReply: undefined,
     selectedReplys: false,
     reply: [],
-    replys: []
+    replys: [],
+    deletComment: true
     
 });
 
@@ -93,6 +94,15 @@ function App() {
       }
 
     })
+  };
+
+  function deleteComment(){
+    setReplyComment((prevDeleteComment) => {
+      return{
+        ...prevDeleteComment,
+        deletComment: false
+      }
+    })
   }
 
  //const commentReply = replyComment.reply.find(reply => reply.reply === replyComment.selectedReply )
@@ -108,6 +118,10 @@ function App() {
         comments = <CommentBox comments = {replyComment.replys} onDeletes={deleteReplys}/>
     }
   
+    let deleteComments;
+    if(replyComment.deletComment === true){
+      deleteComments =  <Juliusomo onDeleteComment = {deleteComment} />
+    }
    
   return (
     <>
@@ -117,7 +131,7 @@ function App() {
             {comment}
           <Maxblagun onclicks = {handleClickReplys} /> 
           <Ramsesmiron />
-          <Juliusomo />
+          {deleteComments}
           {comments}
           <InputBox onReply={addComments}/>
        </div>
