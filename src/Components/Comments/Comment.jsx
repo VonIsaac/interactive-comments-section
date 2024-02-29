@@ -23,7 +23,7 @@ export default function Comment({comments, onDelete}){
                                 <img src={DATA[3].img} alt= 'icon' className='w-9 object-contain' />
                                 <h1 className=' font-bold text-lg cursor-pointer'>juliusomo</h1>
                                 <p className=' text-slate-500 font-medium mt-1'>Now</p>
-                                <button onClick={confirmModal} className=' ml-auto font-bold mb-3 cursor-pointer text-rose-700  hover:text-slate-950'>Delete</button>
+                                <button onClick={ confirmModal} className=' ml-auto font-bold mb-3 cursor-pointer text-rose-700  hover:text-slate-950'>Delete</button>
                             </div>
                             <p className=" font-sans text-slate-600 font-medium ml-5">
                                 <b className=' text-blue-600 cursor-pointer'>{DATA[0].names}</b> {replycomment.comment}

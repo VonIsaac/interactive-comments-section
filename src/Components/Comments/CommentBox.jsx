@@ -5,7 +5,7 @@ export default function CommentBox({comments, onDeletes}){
     const [deleteModal, setDeleteModal] = useState(false);
 
     const confirmModal = useCallback(function confirmModal(){
-          setDeleteModal(prevModal => !prevModal)
+          setDeleteModal(prevModal => !prevModal )
       }, []) 
 
     return(
