@@ -7,7 +7,7 @@ import Input from './Components/Inputs/Input.jsx';
 import Comment from './Components/Comments/Comment.jsx';
 import InputBox from './Components/Inputs/InputBox.jsx';
 import CommentBox from './Components/Comments/CommentBox.jsx';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 function App() {
   const [replyComment, setReplyComment] = useState({
@@ -15,7 +15,7 @@ function App() {
     selectedReplys: false,
     reply: [],
     replys: [],
-    deletComment: true
+    deletComment: true,
     
 });
 
@@ -64,18 +64,9 @@ function App() {
   };
 
 
-  function handleClickReplys(){
-    setReplyComment((prevComment) => {
-      return{
-        ...prevComment,
-        selectedReplys: true
-      }
-    })
 
-    
-  };
 
-  function handleDeleteReply (id){
+  const handleDeleteReply = useCallback( function handleDeleteReply (id){
     setReplyComment((prevDeleteReply) => {
       return{
         ...prevDeleteReply,
@@ -83,7 +74,7 @@ function App() {
       }
 
     })
-  }
+  }, [])
 
 
   function deleteReplys (id){
@@ -107,7 +98,12 @@ function App() {
 
  //const commentReply = replyComment.reply.find(reply => reply.reply === replyComment.selectedReply )
 
-  let comment  =  <Comment comments = {replyComment.reply} onDelete={handleDeleteReply} />
+  let comment  =  (
+    <Comment
+      comments = {replyComment.reply} 
+      onDelete={handleDeleteReply} 
+     
+    />)
   if(replyComment.selectedReply === null){
     comment = <Input onClickReply = {handleADdComment} />
     
@@ -141,3 +137,4 @@ function App() {
 }
 
 export default App
+

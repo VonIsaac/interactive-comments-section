@@ -1,22 +1,34 @@
 
-import { useRef, useImperativeHandle,forwardRef  } from "react"
-import { createPortal } from "react-dom"
-const ModalDelete = forwardRef( function ModalDelete({children, button, onDeletes}, ref){
+import { useRef, useEffect} from "react"
+import { createPortal } from "react-dom";
+import ProgressBar from "../ProgressTimer/ProgressBar";
+
+const TIMER = 3000;
+export default  function ModalDelete({children, button, onDeletes,deleteModal }){
     const modalDelete = useRef()
-
-
-    useImperativeHandle(ref,() => {
-        return{
-            open(){
-                modalDelete.current.showModal()
-            }
+   
+    useEffect(() => {
+        if(deleteModal){
+            modalDelete.current.showModal()
         }
-    })
+       const timer = setTimeout(() => {
+        console.log("Timer Set");
+            modalDelete.current.close()
+            
+       }, TIMER)
+
+       return () => {
+        console.log('cleaning up timer')
+        clearTimeout(timer)
+       }
+    }, [deleteModal])
+   
 
     
     return createPortal(
         
             <dialog ref={modalDelete} className=" backdrop:bg-stone-900/90 p-4 rounded-md shadow-md w-[25%]">
+                <ProgressBar key={deleteModal} timer = {TIMER} />
                 {children}
                 
                 <form method="dialog" className= "gap-3">
@@ -26,6 +38,12 @@ const ModalDelete = forwardRef( function ModalDelete({children, button, onDelete
             </dialog>,
             document.getElementById('modal-delete')
     )
-})
+}
 
-export default ModalDelete
+/*useImperativeHandle(ref,() => {
+    return{
+        open(){
+            modalDelete.current.showModal()
+        }
+    }
+})*/

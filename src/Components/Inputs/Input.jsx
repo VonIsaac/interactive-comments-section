@@ -23,9 +23,9 @@ export default function Input({onClickReply}){
     return(
         <>
             <Modal ref={modalOpen} button = "CLOSE">
-                <h2 className=" text-xl font-bold text-stone-700 my-4">Invalid Input</h2>
-                <p className=" text-stone-600 mb-4">Oops.... looks like you forgot to enter value</p>
-                <p className=" text-stone-600 mb-4">Please make sure to provide a valid value for every input field</p>
+                <h2 className=" text-3xl font-bold text-stone-700 my-2">INVALID INPUT</h2>
+                <p className=" text-stone-600 mb-2">Oops.... looks like you forgot to enter value</p>
+                <p className=" text-stone-600 mb-3">Please make sure to provide a valid value for every input field</p>
             </Modal>
             <div className='border-0 border-slate-950 w-[78%] h-40 p-4 mb-10 bg-slate-100 rounded-xl'>
                 <div className=' flex items-center'>
